@@ -1,0 +1,12 @@
+{
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.rulers": [120],
+    "eslint.validate": ["javascript", "javascriptreact"],
+    "eslint.workingDirectories": ["./src"],
+    "git.ignoreLimitWarning": true,
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    }
+}
