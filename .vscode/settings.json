@@ -4,9 +4,12 @@
     "editor.formatOnSave": true,
     "editor.rulers": [120],
     "eslint.validate": ["javascript", "javascriptreact"],
-    "eslint.workingDirectories": ["./src"],
+    "eslint.workingDirectories": ["./src", "./test"],
     "git.ignoreLimitWarning": true,
     "[html]": {
         "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
     }
 }
