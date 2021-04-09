@@ -1,13 +1,9 @@
-import {createStore} from 'redux';
-import {configureStore} from '@reduxjs/toolkit';
-import apiMiddleware from 'Store/middlewares/api.reducer';
-import countReducer from './reducers/countReducer';
-import rootReducer from './reducers';
-
+import { configureStore } from '@reduxjs/toolkit';
+import apiMiddleware from 'Store/Middlewares/api.middleware';
+import rootReducer from './rootReducer';
 
 const store = configureStore({
-    reducer: rootReducer,
-    middleware:[apiMiddleware],
-
+ reducer: rootReducer,
+ middleware: [apiMiddleware],
 });
 export default store;
