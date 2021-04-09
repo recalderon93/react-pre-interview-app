@@ -1,11 +1,18 @@
 /* eslint-disable react/button-has-type */
 import {useSelector, useDispatch} from 'react-redux';
+import { DECREMENT_COUNT, INCREMENT_COUNT } from 'Store/actions/count.actions';
+import constants, * as constant from 'Store/constants'
+import { apiRequest } from 'Store/actions/api.actions';
 import logo from './logo.svg';
 import './App.css';
 
+const {actions} = constants
 function App() {
     const dispatch = useDispatch();
-    const {count } = useSelector(state => state.count);
+    const { count } = useSelector(state => state.count);
+    console.log(actions.COUNT)
+    const fetchAction = apiRequest('https://restcountries.eu/rest/v2/name/aruba?fullText=true', 'get', null, 'countries');
+
     return (
         <div className="App">
             <header className="App-header">
@@ -20,16 +27,21 @@ function App() {
                 </a>
                 <button
                     onClick={() => {
-                        dispatch({type: 'increment'});
+                        dispatch({type: INCREMENT_COUNT});
                     }}>
                     Increment
                 </button>
                 <button
                     onClick={() => {
-                        dispatch({type: 'decrement'});
+                        dispatch({type: DECREMENT_COUNT});
                     }}>
                     Decrement
                 </button>
+                <button onClick={
+                    () => {
+                        dispatch(fetchAction);
+                    }
+                }>Call the API</button>
             </header>
         </div>
     );
