@@ -1,9 +1,15 @@
 export const UI_ACTION = '[UI] SetLoader';
-
-const setLoader = (loading) => ({
+export const UI_ACTIONS = {
+  SET_LOADER: '[UI] Set Loader',
+  TOGGLE_DARK_MODE: '[UI] Toggle Dark Mode',
+};
+export const setLoader = (loading) => ({
   type: UI_ACTION,
   payload: {
     loading,
   },
 });
-export default setLoader;
+
+export const toggleDarkMode = () => ({
+  type: UI_ACTIONS.TOGGLE_DARK_MODE,
+});

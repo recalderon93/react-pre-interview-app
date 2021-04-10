@@ -25,8 +25,8 @@ function LandingPage() {
     <>
       <Layout loading>
         <div className="username_container">
-          <FormControl>
-            <InputLabel htmlFor="input-with-icon-adornment" sx={{ fontSize: '20px' }}>
+          <FormControl color="primary">
+            <InputLabel color="primary" variant="outlined" htmlFor="input-with-icon-adornment" sx={{ fontSize: '20px' }}>
               Introduce Your Username
             </InputLabel>
             <Input
