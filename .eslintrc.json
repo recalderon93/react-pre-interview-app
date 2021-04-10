@@ -23,7 +23,7 @@
         "react/jsx-filename-extension":"off",
         "global-require":"off",
         "react/react-in-jsx-scope":"off",
-        "no-unused-vars": "off",
+        "no-unused-vars": 0,
         "no-plusplus": "off",
         "no-undef": "off",
         "no-console": "off",
@@ -40,7 +40,10 @@
         ],
         "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
         "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
-        "react/prop-types": 0
+        "react/prop-types": 0,
+        "prettier/prettier": 1,
+        "react/jsx-fragments":0,
+        "no-param-reassign":0
     },
     "settings": {
         "react": {
