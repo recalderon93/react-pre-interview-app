@@ -1,9 +1,14 @@
 {
     "compilerOptions": {
         "jsx": "react",
-        "baseUrl": "src"
+        "baseUrl": "src",
+        "paths": {
+            "@UserAction": [
+                "Store/User/user.actions.js"
+            ]
+        }
     },
     "include": [
         "src"
-, "src/App.test.js"    ]
+    ]
 }

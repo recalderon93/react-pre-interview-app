@@ -6,8 +6,8 @@ import { Button } from '@material-ui/core';
 import { styled } from '@material-ui/core/styles';
 
 function ButtonExtended(props) {
- const Buttond = styled(Button)(spacing, sizing);
- return <Buttond {...props}>{props.children}</Buttond>;
+  const Buttond = styled(Button)(spacing, sizing);
+  return <Buttond {...props}>{props.children}</Buttond>;
 }
 
 export default ButtonExtended;

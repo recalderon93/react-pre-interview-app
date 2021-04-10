@@ -1,58 +1,44 @@
 {
     "env": {
         "browser": true,
-        "es2021": true
+        "es2020": true
     },
     "extends": [
-        "eslint:recommended",
-        "airbnb",
         "plugin:react/recommended",
-        "plugin:import/recommended",
-        "plugin:prettier/recommended",
-        "prettier"
+        "airbnb",
+        "react-app"
     ],
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
         },
-        "ecmaVersion": 2020,
+        "ecmaVersion": 12,
         "sourceType": "module"
     },
-    "plugins": ["react", "react-hooks"],
+    "plugins": [
+        "react",
+        "jest",
+        "prettier"
+    ],
     "rules": {
-        "react/jsx-filename-extension":"off",
-        "global-require":"off",
-        "react/react-in-jsx-scope":"off",
-        "no-unused-vars": 0,
-        "no-plusplus": "off",
-        "no-undef": "off",
-        "no-console": "off",
-        "quotes": ["error", "single"],
-        "import/extensions": [
+        "linebreak-style": [
             "error",
-            "ignorePackages",
-            {
-                "js": "never",
-                "jsx": "never",
-                "ts": "never",
-                "tsx": "never"
-            }
+            "windows"
         ],
-        "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
-        "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
-        "react/prop-types": 0,
-        "prettier/prettier": 1,
-        "react/jsx-fragments":0,
-        "no-param-reassign":0
+        "react/jsx-filename-extension": "off",
+        "react/react-in-jsx-scope": "off",
+        "react/prop-types":"off",
+        "no-undef": "off",
+        "no-unused-vars": "warn",
+        "no-param-reassign": 0
     },
     "settings": {
-        "react": {
-            "version": "latest"
-        },
         "import/resolver": {
             "node": {
-                "extensions": [".js", "jsx"],
-                "moduleDirectory": ["node_modules", "src/"]
+                "moduleDirectory": [
+                    "node_modules",
+                    "src/"
+                ]
             }
         }
     }
