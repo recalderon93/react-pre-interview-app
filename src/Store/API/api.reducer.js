@@ -3,7 +3,7 @@ import { API_ACTIONS } from './api.actions';
 
 const ENTITY = '[COUNTRIES]';
 
-const countriesReducer = produce((draft, action) => {
+const countriesApiReducer = produce((draft, action) => {
   const { type, payload } = action;
   switch (type) {
     case `${ENTITY} ${API_ACTIONS.REQUEST}`:
@@ -16,3 +16,5 @@ const countriesReducer = produce((draft, action) => {
       break;
   }
 });
+
+export default countriesApiReducer;

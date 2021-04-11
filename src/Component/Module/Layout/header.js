@@ -23,7 +23,7 @@ const Header = () => {
           <Toolbar m={0} p={0} className={classes.flexContainer}>
             <Typography
               fontWeight={770}
-              fontSise={30}
+              fontSize={30}
               noWrap
               component="div"
             >

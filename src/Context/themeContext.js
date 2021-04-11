@@ -23,6 +23,13 @@ const darkTtheme = createMuiTheme({
     background: {
       default: grey[900],
     },
+    text: {
+      primary: grey[100],
+    },
+  },
+  typography: {
+    color: '#ffffff',
+    fontWeightBold: 850,
   },
 });
 
