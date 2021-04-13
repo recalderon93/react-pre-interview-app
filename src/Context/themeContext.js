@@ -9,6 +9,10 @@ const theme = createMuiTheme({
   palette: {
     primary: {
       main: orange[400],
+      contrastText: grey[900],
+    },
+    text: {
+      primary: grey[900],
     },
   },
 
@@ -23,7 +27,11 @@ const darkTtheme = createMuiTheme({
     background: {
       default: grey[900],
     },
+    text: {
+      primary: grey[100],
+    },
   },
+
 });
 
 function ThemeContext({ children }) {

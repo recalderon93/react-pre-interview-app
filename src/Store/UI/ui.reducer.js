@@ -1,5 +1,5 @@
 import produce from 'immer';
-import { UI_ACTION, UI_ACTIONS } from './ui.actions';
+import { UI_ACTIONS } from './ui.actions';
 
 export const LOADER_INITAL_STATE = { loader: false, darkMode: false };
 
