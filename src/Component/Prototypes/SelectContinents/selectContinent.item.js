@@ -14,9 +14,9 @@ function SelectContinentItem({ theme, value }) {
       height: '100%',
     },
   });
-  const { continentsList } = useSelector((state) => state.countries);
-  const selected = CONSTANTS.CONTINENTS.includes(value)
-    ? continentsList.includes(value) : (continentsList === CONSTANTS.CONTINENTS);
+  const { continentsList } = useSelector((state) => state.continents);
+  const selected = (CONSTANTS.CONTINENTS.includes(value))
+    ? continentsList.includes(value) : (continentsList.length === CONSTANTS.CONTINENTS.length);
   const dispatch = useDispatch();
   const onChangeCheckHandler = (e) => {
     if (CONSTANTS.CONTINENTS.includes(value)) {

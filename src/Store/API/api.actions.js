@@ -7,22 +7,24 @@ export const API_ACTIONS = {
   ERROR: 'API_ERROR',
 };
 
-export const apiRequest = (url, method, body, entity) => ({
-  type: `${entity.toUpperCase()} ${API_REQUEST}`,
+export const apiRequest = (urls, method, body, entity, history) => ({
+  type: `[${entity.toUpperCase()}] ${API_REQUEST}`,
   payload: {
-    meta: { url, method, entity },
+    meta: {
+      urls, method, entity, history,
+    },
     data: body,
   },
 });
 export const apiSuccess = (response, entity) => ({
-  type: `${entity.toUpperCase()} ${API_SUCCESS}`,
+  type: `[${entity.toUpperCase()}] ${API_SUCCESS}`,
   payload: {
     data: response,
     meta: { entity },
   },
 });
 export const apiError = (error, entity) => ({
-  type: `${entity.toUpperCase()} ${API_ERROR}`,
+  type: `[${entity.toUpperCase()}] ${API_ERROR}`,
   payload: {
     meta: { entity },
     data: error,
