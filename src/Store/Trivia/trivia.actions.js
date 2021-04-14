@@ -26,16 +26,15 @@ export function onChangeAnswer(value) {
     payload: { value },
   });
 }
-export function VERIFY_ANSWER(userAnswer, correctAnswer) {
+export function verifyAnswer() {
   return ({
     type: TRIVIA_ACTIONS.VERIFY_ANSWER,
     payload: {
-      verification: userAnswer === correctAnswer,
     },
   });
 }
 
-export function isAnswerCorrect(userAnswer, correctAnswer) {
+export function isAnswerCorrect() {
   return ({
     type: TRIVIA_ACTIONS.CORRECT,
     payload: {
@@ -43,7 +42,15 @@ export function isAnswerCorrect(userAnswer, correctAnswer) {
     },
   });
 }
-export function isAnswerIncorrect(userAnswer, correctAnswer) {
+export function revealAnswer() {
+  return ({
+    type: TRIVIA_ACTIONS.REVEAL_ANSWER,
+    payload: {
+
+    },
+  });
+}
+export function isAnswerIncorrect() {
   return ({
     type: TRIVIA_ACTIONS.INCORRECT,
     payload: {

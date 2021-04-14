@@ -1,12 +1,12 @@
 /* eslint-disable linebreak-style */
 import {
-  render, fireEvent, getByLabelText, getByText, getByTestId,
+  render, fireEvent, getByLabelText, getByText,
 } from '@testing-library/react';
-import continentSelectionHandler from 'Utils/ContinentsSelectionhandler';
 import Context from 'Context/context';
 import { MemoryRouter } from 'react-router';
 import store from 'Store/store';
 
+import CONSTANTS from 'Utils/Constants';
 import App from './App';
 
 const setContainer = (url) => {
@@ -20,9 +20,9 @@ const setContainer = (url) => {
   return container;
 };
 const setUp = () => {
-  const container = setContainer('/');
-  const inputName = getByLabelText(container, /Introduce Your UserName/i);
-  const enterButton = getByText(container, /enter/i);
+  const container = setContainer(CONSTANTS.ROUTES.LOGIN);
+  const inputName = getByLabelText(container, /Nombre de Usuario/i);
+  const enterButton = getByText(container, /aceptar/i);
   return {
     container, inputName, enterButton,
   };
@@ -39,7 +39,7 @@ describe('Test the Landing Page Comnponent', () => {
 
 describe('Test the Select Continent page', () => {
   function SetUpSelectPage() {
-    const container = setContainer('/select');
+    const container = setContainer(CONSTANTS.ROUTES.SELECT_CONTINENTS);
     const americaCheck = getByText(container, /America/i);
     const selectBTN = getByText(container, /seleccionar/i);
     return {
@@ -55,20 +55,5 @@ describe('Test the Select Continent page', () => {
     const { americaCheck } = SetUpSelectPage();
     fireEvent.click(americaCheck);
     expect(store.getState().continents.continentsList).toContain('America');
-  });
-  test('Check if the selection Button fetch the Data from the API', async () => {
-    const { selectBTN } = SetUpSelectPage();
-    await fireEvent.click(selectBTN);
-    const checkResponse = async (loader) => {
-      await setTimeout(() => {
-        console.log(store.getState);
-      }, 5000);
-      if (store.getState().ui.loader) {
-        checkResponse(store.getState().ui.loader);
-      }
-      console.log(store.getState().ui.loader);
-    };
-    checkResponse(store.getState().ui.loader);
-    console.log(store.getState());
   });
 });

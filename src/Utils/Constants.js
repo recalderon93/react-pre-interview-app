@@ -8,6 +8,12 @@ const CONSTANTS = {
       URL: `https://restcountries.eu/rest/v2/region/${continent.toLowerCase()}`,
     }),
   },
+  ROUTES: {
+    LOGIN: '/',
+    SELECT_CONTINENTS: '/selectContinents',
+    COUNTRIES_LIST: '/countriesList',
+    TRIVIA: '/trivia',
+  },
 };
 
 export default CONSTANTS;

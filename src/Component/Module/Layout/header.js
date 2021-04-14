@@ -7,6 +7,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleDarkMode } from 'Store/UI/ui.actions';
 import SaveIcon from '@material-ui/icons/NightsStay';
+import NavMenu from '../navMenu';
 
 const useStyles = makeStyles((theme) => ({
   flexContainer: {
@@ -21,6 +22,7 @@ const Header = () => {
       <Box p="0">
         <AppBar position="static" m={0} p={0}>
           <Toolbar m={0} p={0} className={classes.flexContainer}>
+            <NavMenu />
             <Typography
               fontWeight={770}
               fontSize={30}

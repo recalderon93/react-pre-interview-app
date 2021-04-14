@@ -1,4 +1,5 @@
 import produce from 'immer';
+import CONSTANTS from 'Utils/Constants';
 
 import { USER_ACTIONS } from './user.actions';
 
@@ -12,7 +13,7 @@ const userReducer = produce((draft, action) => {
       draft.name = payload.name;
       break;
     case USER_ACTIONS.SUBMIT:
-      payload.history.push('/select');
+      payload.history.push(CONSTANTS.ROUTES.SELECT_CONTINENTS);
       break;
 
     default:
