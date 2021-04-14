@@ -8,10 +8,12 @@ import SelectContinent from 'Component/Prototypes/SelectContinents/SelectContine
 function RoutesComponent() {
   return (
     <Switch>
+
       <Layout>
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/countriesList" component={CountriesList} />
         <Route exact path="/select" component={SelectContinent} />
+        <Route exact path="/trivia" component={TriviaPage} />
       </Layout>
     </Switch>
   );
