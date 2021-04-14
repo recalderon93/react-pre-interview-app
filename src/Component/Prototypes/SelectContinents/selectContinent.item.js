@@ -10,8 +10,11 @@ import { toggleAllContinents, toggleContient } from 'Store/Countries/countries.a
 function SelectContinentItem({ theme, value }) {
   const useStyles = makeStyles({
     root: {
-      width: '100%',
-      height: '100%',
+      display: 'flex',
+      justifyContent: 'center',
+    },
+    item: {
+      width: 'clamp(120px, 25vw, 300px)',
     },
   });
   const { continentsList } = useSelector((state) => state.continents);
@@ -27,32 +30,31 @@ function SelectContinentItem({ theme, value }) {
   };
   return (
     <>
-      <FormControl className={useStyles().root}>
-        <FormControlLabel
-          control={(
-            <Paper
-              className={useStyles().root}
-              variant="elevation"
-              elevation={3}
-              style={{
-                backgroundColor: theme.palette.primary.main,
-                display: 'flex',
-                flexDirection: 'column',
-              }}
+      <FormControlLabel
+        className={useStyles().root}
+        control={(
+          <Paper
+            className={useStyles().item}
+            variant="elevation"
+            elevation={3}
+            style={{
+              backgroundColor: theme.palette.primary.main,
+              display: 'flex',
+              flexDirection: 'column',
+            }}
+          >
+            <Typography
+              align="center"
+              noWrap
+              component="div"
+              style={{ color: theme.palette.text.primary }}
             >
-              <Typography
-                align="center"
-                noWrap
-                component="div"
-                style={{ color: theme.palette.text.primary }}
-              >
-                {value}
-              </Typography>
-              <Checkbox checked={selected} onChange={(e) => onChangeCheckHandler(e)} />
-            </Paper>
+              {value}
+            </Typography>
+            <Checkbox checked={selected} onChange={(e) => onChangeCheckHandler(e)} />
+          </Paper>
 )}
-        />
-      </FormControl>
+      />
     </>
   );
 }

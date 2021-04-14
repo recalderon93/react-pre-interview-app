@@ -1,8 +1,6 @@
 import React from 'react';
-import Layout from 'Component/Module/Layout';
 import { DataGrid, GridToolbar } from '@material-ui/data-grid';
 import { useSelector } from 'react-redux';
-import { SvgIcon } from '@material-ui/core';
 
 const columns = [
   { field: 'id', headerName: 'ID', width: 70 },
@@ -27,18 +25,16 @@ function CountriesList() {
   }));
   return (
     <>
-      <Layout>
-        <div style={{ height: '80vh', width: '100%' }}>
-          <DataGrid
-            rows={rowsC}
-            columns={columns}
-            pageSize={15}
-            checkboxSelection
-            components={{ Toolbar: GridToolbar }}
-          />
+      <div style={{ height: '80vh', width: '100%' }}>
+        <DataGrid
+          rows={rowsC}
+          columns={columns}
+          pageSize={15}
+          checkboxSelection
+          components={{ Toolbar: GridToolbar }}
+        />
 
-        </div>
-      </Layout>
+      </div>
     </>
   );
 }

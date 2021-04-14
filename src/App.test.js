@@ -2,7 +2,7 @@
 import {
   render, fireEvent, getByLabelText, getByText, getByTestId,
 } from '@testing-library/react';
-import continentSelectionHandler from 'Component/Prototypes/SelectContinents/ContinentsSelectionhandler';
+import continentSelectionHandler from 'Utils/ContinentsSelectionhandler';
 import Context from 'Context/context';
 import { MemoryRouter } from 'react-router';
 import store from 'Store/store';

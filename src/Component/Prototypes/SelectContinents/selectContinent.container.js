@@ -10,13 +10,18 @@ function SelectContinentContainer() {
   useEffect(() => () => { }, []);
   return (
     <>
-      <Grid container spacing={8}>
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr 1fr',
+        margin: '0 auto',
+        gap: '3.5vw',
+
+      }}
+      >
         {continents.concat(['Todos']).map((item) => (
-          <Grid key={item} item xs={4}>
-            <SelectContinentItem value={item} />
-          </Grid>
+          <SelectContinentItem value={item} />
         ))}
-      </Grid>
+      </div>
     </>
   );
 }

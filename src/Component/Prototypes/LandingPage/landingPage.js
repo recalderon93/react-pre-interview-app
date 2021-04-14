@@ -1,15 +1,9 @@
 /* eslint-disable no-unused-expressions */
 import React from 'react';
-import {
-  FormControl, InputLabel, InputAdornment, Input,
-} from '@material-ui/core';
 import { useSelector, useDispatch } from 'react-redux';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import Layout from 'Component/Module/Layout/Layout';
-import './landingPage.scss';
 import { userNameChange, userNameSubmit } from 'Store/User/user.actions';
 import { useHistory } from 'react-router';
-import ButtonExtended from 'Component/Elements/Button/button.muiExtended';
+import InputSubmit from 'Component/Module/Layout/InputSummit/inputSubmit';
 
 function LandingPage() {
   const dispatch = useDispatch();
@@ -23,37 +17,7 @@ function LandingPage() {
   };
   return (
     <>
-      <Layout loading>
-        <div className="username_container">
-          <FormControl color="primary">
-            <InputLabel color="primary" variant="outlined" htmlFor="input-with-icon-adornment" sx={{ fontSize: '20px' }}>
-              Introduce Your Username
-            </InputLabel>
-            <Input
-              id="input-with-icon-adornment"
-              onChange={(e) => {
-                onChangeHandler(e);
-              }}
-              value={name}
-              startAdornment={(
-                <InputAdornment position="start">
-                  <AccountCircle />
-                </InputAdornment>
-              )}
-            />
-            <ButtonExtended
-              variant="contained"
-              color="primary"
-              mt={5}
-              onClick={(e) => {
-                clickHandler(e);
-              }}
-            >
-              Enter
-            </ButtonExtended>
-          </FormControl>
-        </div>
-      </Layout>
+      <InputSubmit title="Ingresar" value={name} onChangeHandler={onChangeHandler} onClickHandler={clickHandler} />
     </>
   );
 }
