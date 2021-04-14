@@ -9,20 +9,23 @@ const theme = createMuiTheme({
   palette: {
     primary: {
       main: orange[400],
-      contrastText: grey[900],
+      // contrastText: grey[900],
+    },
+    background: {
+      default: grey[200],
     },
     text: {
-      primary: grey[900],
+      primary: '#000000',
     },
   },
 
 });
-const darkTtheme = createMuiTheme({
+const darkTheme = createMuiTheme({
   palette: {
-    type: 'dark',
     primary: {
       main: grey[800],
-      contrastText: grey[100],
+      due: grey[600],
+      // contrastText: grey[100],
     },
     background: {
       default: grey[900],
@@ -38,7 +41,7 @@ function ThemeContext({ children }) {
   const { darkMode } = useSelector((state) => state.ui);
   return (
     <>
-      <ThemeProvider theme={darkMode ? darkTtheme : theme}>
+      <ThemeProvider theme={darkMode ? darkTheme : theme}>
         {children}
       </ThemeProvider>
     </>

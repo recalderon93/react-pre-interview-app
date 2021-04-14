@@ -1,6 +1,9 @@
 import React from 'react';
 import { DataGrid, GridToolbar } from '@material-ui/data-grid';
 import { useSelector } from 'react-redux';
+import ButtonStyled from 'Component/Elements/Button';
+import { useHistory } from 'react-router';
+import CONSTANTS from 'Utils/Constants';
 
 const columns = [
   { field: 'id', headerName: 'ID', width: 70 },
@@ -23,6 +26,7 @@ function CountriesList() {
     flag2: <img src={item.flag} alt={`${item.name} flag`} />,
     ...item,
   }));
+  const history = useHistory();
   return (
     <>
       <div style={{ height: '80vh', width: '100%' }}>
@@ -33,7 +37,7 @@ function CountriesList() {
           checkboxSelection
           components={{ Toolbar: GridToolbar }}
         />
-
+        <ButtonStyled textValue="Generar Trivia" handler={() => history.push(CONSTANTS.ROUTES.TRIVIA)} />
       </div>
     </>
   );

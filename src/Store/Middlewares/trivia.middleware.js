@@ -1,15 +1,19 @@
-import { isAnswerCorrect, isAnswerIncorrect, TRIVIA_ACTIONS } from 'Store/Trivia/trivia.actions';
+import {
+  generatesTrivia, isAnswerCorrect, isAnswerIncorrect, TRIVIA_ACTIONS,
+} from 'Store/Trivia/trivia.actions';
 
-const triviaMiddleware = ({ dispatch }) => (next) => async (action) => {
+const triviaMiddleware = ({ dispatch, getState }) => (next) => async (action) => {
   next(action);
-  const { type, payload } = action;
-  if (type.match(/trivia/i)) {
+  const { trivia, countries } = getState();
+  const { type } = action;
+  if (/trivia/i.test(type)) {
     switch (type) {
-      case TRIVIA_ACTIONS.VERIFY:
-        if (payload.verification) {
-          dispatch(isAnswerCorrect('', ''));
+      case TRIVIA_ACTIONS.VERIFY_ANSWER:
+        if (RegExp(trivia.correctAnswer, 'i').test(trivia.userAnswer)) {
+          dispatch(isAnswerCorrect());
+          dispatch(generatesTrivia(trivia.controlArray, countries.countriesList));
         } else {
-          dispatch(isAnswerIncorrect('', ''));
+          dispatch(isAnswerIncorrect());
         }
         break;
       default:

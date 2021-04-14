@@ -3,6 +3,7 @@ import { setLoader } from 'Store/UI/ui.actions';
 
 const apiMiddleware = ({ dispatch }) => (next) => async (action) => {
   next(action);
+
   if (action.type.match(/API_REQUEST/)) {
     const {
       entity, method, urls, history,

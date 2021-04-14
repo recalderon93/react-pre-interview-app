@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, withTheme } from '@material-ui/core/styles';
 import { Paper, Typography } from '@material-ui/core';
 import InputFieldStyled from 'Component/Elements/Input/InputFieldStyled';
 import ButtonStyled from 'Component/Elements/Button';
@@ -18,12 +18,19 @@ const useStyle = makeStyles({
   },
 });
 function InputSubmit({
-  title, value, onChangeHandler, onClickHandler,
+  title, value, onChangeHandler, onClickHandler, theme,
 }) {
   const classes = useStyle();
   return (
     <>
-      <Paper variant="elevation" elevation={3} className={classes.flexContainer}>
+      <Paper
+        variant="elevation"
+        elevation={5}
+        className={classes.flexContainer}
+        style={{
+          backgroundColor: theme.palette.primary.due,
+        }}
+      >
         {title && <Typography variant="h5" fontWeight="790">{ title}</Typography>}
         <InputFieldStyled handler={onChangeHandler} label="Nombre de Usuario" />
         <ButtonStyled textValue="Aceptar" handler={onClickHandler} />
@@ -32,4 +39,4 @@ function InputSubmit({
   );
 }
 
-export default InputSubmit;
+export default withTheme(InputSubmit);

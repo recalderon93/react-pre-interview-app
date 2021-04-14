@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  Paper, FormControl, Typography, FormControlLabel, Checkbox,
+  Paper, Typography, FormControlLabel, Checkbox,
 } from '@material-ui/core';
 import { makeStyles, withTheme } from '@material-ui/core/styles';
 import CONSTANTS from 'Utils/Constants';

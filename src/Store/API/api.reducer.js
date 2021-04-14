@@ -11,7 +11,7 @@ const countriesApiReducer = produce((draft, action) => {
   const { type, payload } = action;
   switch (type) {
     case `${ENTITY} ${API_ACTIONS.REQUEST}`:
-
+      draft.countriesList = [];
       break;
     case `${ENTITY} ${API_ACTIONS.SUCCESS}`:
       draft.countriesList = draft.countriesList.concat(payload.data);
