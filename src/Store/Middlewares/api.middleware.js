@@ -16,7 +16,6 @@ const apiMiddleware = ({ dispatch }) => (next) => async (action) => {
       dispatch(apiSuccess(allData, entity));
       history.push('/countriesList');
     } catch (error) {
-      console.log(error);
       dispatch(apiError(error, entity));
     }
   }
