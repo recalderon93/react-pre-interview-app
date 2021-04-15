@@ -7,7 +7,7 @@ import { MemoryRouter } from 'react-router';
 import store from 'Store/store';
 
 import CONSTANTS from 'Utils/Constants';
-import App from './App';
+import App from '../App';
 
 const setContainer = (url) => {
   const { container } = render(

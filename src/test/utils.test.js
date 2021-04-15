@@ -1,6 +1,6 @@
 /* eslint-disable no-plusplus */
 import randomIndex from 'Utils/randomIndex';
-import toggleSelectionArray from './Utils';
+import toggleSelectionArray from '../Utils';
 
 describe('Testing Utils Functions', () => {
   test('Test the ToggleSelectionArray to splice if the Value Exists', () => {
