@@ -1,4 +1,6 @@
 import { apiRequest } from 'Store/API/api.actions';
+
+import { restartControlArray } from 'Store/Trivia/trivia.actions';
 import CONSTANTS from 'Utils/Constants';
 
 export default function continentSelectionHandler(dispatch, continentsList, history) {
@@ -31,6 +33,9 @@ export default function continentSelectionHandler(dispatch, continentsList, hist
       return res;
     });
   }
+
+  dispatch(restartControlArray());
+
   requestList = requestListCreator(continentsTraslated);
   if (requestList.length > 0) {
     dispatch(apiRequest(requestList, 'get', {}, 'countries', history));

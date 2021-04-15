@@ -43,7 +43,9 @@ function TriviaPage() {
     }
     return () => {
     };
-  }, [countries.countriesList, dispatch, history, trivia.controlArray]);
+
+  }, []);
+
   function onChangeHandler(e) {
     dispatch(onChangeAnswer(e.target.value));
   }
