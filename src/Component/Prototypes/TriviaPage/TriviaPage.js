@@ -43,7 +43,9 @@ function TriviaPage() {
     }
     return () => {
     };
+
   }, []);
+
   function onChangeHandler(e) {
     dispatch(onChangeAnswer(e.target.value));
   }

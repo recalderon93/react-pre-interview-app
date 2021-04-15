@@ -1,4 +1,3 @@
-import { COUNTRIES_ACTIONS } from 'Store/Countries/countries.actions';
 import {
   generatesTrivia, isAnswerCorrect, isAnswerIncorrect, TRIVIA_ACTIONS,
 } from 'Store/Trivia/trivia.actions';
