@@ -43,7 +43,6 @@ function TriviaPage() {
     }
     return () => {
     };
-
   }, []);
 
   function onChangeHandler(e) {

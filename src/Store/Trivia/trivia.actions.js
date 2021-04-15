@@ -60,7 +60,6 @@ export function isAnswerIncorrect() {
   });
 }
 
-
 export function restartControlArray() {
   return ({
     type: TRIVIA_ACTIONS.RESTART_CONTROL_ARRAY,
@@ -69,4 +68,3 @@ export function restartControlArray() {
     },
   });
 }
-
