@@ -7,6 +7,7 @@ export const TRIVIA_ACTIONS = {
   CORRECT: '[TRIVIA] correct Answer',
   INCORRECT: '[TRIVIA] incorrect Answer',
   ANSWER_CHANGE: '[TRIVIA] onChange answer',
+  RESTART_CONTROL_ARRAY: '[TRIVIA] restart control array',
 };
 
 export function generatesTrivia(controlArray, countriesList) {
@@ -54,6 +55,15 @@ export function isAnswerIncorrect() {
   return ({
     type: TRIVIA_ACTIONS.INCORRECT,
     payload: {
+    },
+  });
+}
+
+export function restartControlArray() {
+  return ({
+    type: TRIVIA_ACTIONS.RESTART_CONTROL_ARRAY,
+    payload: {
+
     },
   });
 }

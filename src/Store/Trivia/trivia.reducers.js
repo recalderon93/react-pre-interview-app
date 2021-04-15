@@ -40,6 +40,13 @@ const triviaReducer = produce((draft, action) => {
     case TRIVIA_ACTIONS.INCORRECT:
       draft.noAttemps++;
       break;
+    case TRIVIA_ACTIONS.RESTART_CONTROL_ARRAY:
+      draft.controlArray = [];
+      draft.noCorrectAns = 0;
+      draft.noAttemps = 0;
+      draft.noRevealedAns = 0;
+
+      break;
     default:
       break;
   }
