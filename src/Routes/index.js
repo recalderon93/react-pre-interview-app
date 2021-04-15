@@ -14,6 +14,7 @@ function RoutesComponent() {
 
       <Layout>
         <Route exact path={ROUTES.LOGIN} component={LandingPage} />
+        <Route exact path="/react-pre-interview-app" component={LandingPage} />
         <Route exact path={ROUTES.COUNTRIES_LIST} component={CountriesList} />
         <Route exact path={ROUTES.SELECT_CONTINENTS} component={SelectContinent} />
         <Route exact path={ROUTES.TRIVIA} component={TriviaPage} />
